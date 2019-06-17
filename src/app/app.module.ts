@@ -8,8 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatInputModule, MatSortModule, MatTableModule} from '@angular/material';
 import { ProgramsComponent } from './programs/programs.component';
+import { ProgramDetailComponent } from './program-detail/program-detail.component';
 
 
 const config = {
@@ -22,7 +23,8 @@ const config = {
   declarations: [
     AppComponent,
     AuthenticationComponent,
-    ProgramsComponent
+    ProgramsComponent,
+    ProgramDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,9 @@ const config = {
     MatButtonModule,
     MatCardModule,
     OktaAuthModule.initAuth(config),
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

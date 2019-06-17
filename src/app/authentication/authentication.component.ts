@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { OktaAuthService } from '@okta/okta-angular';
+import {ProgramService} from '../program.service';
 
 @Component({
   selector: 'app-authentication',
@@ -13,7 +14,9 @@ export class AuthenticationComponent implements OnInit {
     password: new FormControl('')
   });
   isAuthenticated: boolean;
-  constructor(public oktaAuth: OktaAuthService) {
+  constructor(
+    public oktaAuth: OktaAuthService,
+    private programService: ProgramService) {
     this.oktaAuth.$authenticationState.subscribe(
       (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
     );
@@ -22,9 +25,13 @@ export class AuthenticationComponent implements OnInit {
   async ngOnInit() {
     // Get the authentication state for immediate use
     this.isAuthenticated = await this.oktaAuth.isAuthenticated();
+    if (this.isAuthenticated) {
+      console.warn('i am already authenticated and am gettig headers')
+      await this.programService.setHeaders();
+    }
   }
 
-  login() {
+  async login() {
     this.oktaAuth.loginRedirect('/programs');
   }
 
