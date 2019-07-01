@@ -1,3 +1,21 @@
 .root {
   padding: 20px;
+  min-height: 600px;
+}
+.sidenav {
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 1px;
+}
+
+.sidenav-item {
+  padding: 10px;
+}
+
+.sidenav button {
+  display: block;
+}
+
+.header h1 {
+  margin-left: 10px;
 }

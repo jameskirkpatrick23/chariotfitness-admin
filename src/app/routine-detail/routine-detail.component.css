@@ -11,15 +11,15 @@ table {
 .mb1 {
   margin-bottom: 5px;
 }
-.program-header .mat-icon {
+.routine-header .mat-icon {
   float: right;
   margin-left: 5px;
 }
 
-.program-header h1 {
+.routine-header h1 {
   display: inline;
 }
 
-.program-header {
+.routine-header {
   margin-bottom: 10px;
 }

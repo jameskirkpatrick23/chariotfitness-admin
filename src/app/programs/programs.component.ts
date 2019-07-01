@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Program} from '../program';
+import {Program} from '../models';
 import {ProgramService} from '../program.service';
 
 @Component({
@@ -15,12 +15,12 @@ export class ProgramsComponent implements OnInit {
   }
 
   getPrograms(): void {
-    this.programService.getPrograms().then(observable =>
-      observable.subscribe(programs =>
-        this.programs = programs));
+    this.programService.getPrograms()
+      .subscribe(programs =>
+        this.programs = programs);
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.getPrograms();
   }
 

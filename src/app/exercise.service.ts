@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {Program} from './models';
+import {Exercise} from './models';
 import {MessageService} from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProgramService {
+export class ExerciseService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
@@ -32,43 +32,42 @@ export class ProgramService {
   }
 
   private log(message: string) {
-    this.messageService.add(`Program Service: ${message}`);
+    this.messageService.add(`Exercise Service: ${message}`);
   }
 
-  getPrograms(): Observable<Program[]> {
-    return this.http.get<Program[]>(
-      'http://localhost:3000/programs',
+  getExercises(): Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(
+      'http://localhost:3000/exercises',
       this.httpOptions
     ).pipe(
-      catchError(this.handleError<Program[]>('getPrograms', []))
+      catchError(this.handleError<Exercise[]>('getExercises', []))
     );
   }
 
-  updateProgram(program: Program): Observable<Program> {
-    const url = `api/programs/${program.id}`;
-    this.messageService.add('Program Service: updating single program');
-    return this.http.put(url, program, this.httpOptions)
+  updateExercise(exercise: Exercise): Observable<Exercise> {
+    const url = `http://localhost:3000/exercises/${exercise.id}`;
+    this.messageService.add('Exercise Service: updating single exercise');
+    return this.http.put(url, exercise, this.httpOptions)
       .pipe(
-        catchError(this.handleError<any>(`updateProgram`))
+        catchError(this.handleError<any>(`updateExercise`))
       );
   }
 
-  getProgram(id): Observable<Program> {
-    return this.http.get<Program>(
-      `http://localhost:3000/programs/${id}?_embed=routines`,
+  getExercise(id): Observable<Exercise> {
+    return this.http.get<Exercise>(
+      `http://localhost:3000/exercises/${id}`,
       this.httpOptions
     ).pipe(
-      catchError(this.handleError<Program>('getProgram'))
+      catchError(this.handleError<Exercise>('getExercise'))
     );
   }
-
-  createProgram(program: Program): Observable<Program> {
-    return this.http.post<Program>(
-      `http://localhost:3000/programs`,
-      program,
+  createExercise(exercise: Exercise): Observable<Exercise> {
+    return this.http.post<Exercise>(
+      `http://localhost:3000/exercises`,
+      exercise,
       this.httpOptions
     ).pipe(
-      catchError(this.handleError<Program>('createProgram'))
+      catchError(this.handleError<Exercise>('createExercise'))
     );
   }
 

@@ -1,30 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { OktaAuthModule } from '@okta/okta-angular';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatInputModule, MatSortModule, MatTableModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatSortModule,
+  MatTableModule,
+  MatIconModule,
+  MatAutocompleteModule, MatGridListModule, MatToolbarModule, MatSidenavModule, MatSelectModule
+} from '@angular/material';
 import { ProgramsComponent } from './programs/programs.component';
 import { ProgramDetailComponent } from './program-detail/program-detail.component';
+import { RoutineFormComponent } from './routine-form/routine-form.component';
+import { ExerciseTemplateComponent } from './exercise-template/exercise-template.component';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { ExerciseDetailComponent } from './exercise-detail/exercise-detail.component';
+import { RoutineDetailComponent } from './routine-detail/routine-detail.component';
+import { ExerciseFormComponent } from './exercise-form/exercise-form.component';
+import { ProgramFormComponent } from './program-form/program-form.component';
+import { UsersComponent } from './users/users.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
-
-const config = {
-  issuer: 'https://dev-988186.okta.com/oauth2/default',
-  redirectUri: 'http://localhost:4200/implicit/callback',
-  clientId: '0oapv8x25bQ2xT3ui356'
-}
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent,
     ProgramsComponent,
-    ProgramDetailComponent
+    ProgramDetailComponent,
+    RoutineFormComponent,
+    ExerciseTemplateComponent,
+    ExercisesComponent,
+    ExerciseDetailComponent,
+    RoutineDetailComponent,
+    ExerciseFormComponent,
+    ProgramFormComponent,
+    UsersComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +50,16 @@ const config = {
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    OktaAuthModule.initAuth(config),
     HttpClientModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    FormsModule,
+    MatIconModule,
+    MatAutocompleteModule,
+    MatGridListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

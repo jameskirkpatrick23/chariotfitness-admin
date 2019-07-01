@@ -1,0 +1,31 @@
+<button mat-raised-button (click)="goBack()" class="mb1"><mat-icon>arrow_back</mat-icon></button>
+<h1>Create User</h1>
+<form [formGroup]="userForm" class="user-form" (ngSubmit)="save()">
+  <div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="First Name" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Last Name" formControlName="lastName">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Email" formControlName="email" type="email">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Programs</mat-label>
+      <mat-select multiple formControlName="programIds">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let program of programOptions" [value]="program.id">
+          {{program.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button type="submit" [disabled]="!userForm.valid">Save User</button>
+  </div>
+</form>

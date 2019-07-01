@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  events: string[] = [];
+  opened = true;
   title = 'workout-admin';
 }

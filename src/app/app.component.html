@@ -1,3 +1,27 @@
-<div class="root">
-  <router-outlet></router-outlet>
+<div class="mat-app-background basic-container">
+  <mat-toolbar class="header" color="primary">
+    <button color="accent" mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button><h1>Chariot Fitness</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" class="sidenav"
+                 [(opened)]="opened"
+                 [fixedInViewport]="false">
+      <button mat-button color="accent" class="sidenav-item">
+        <a routerLink="/programs">Programs</a>
+      </button>
+      <button mat-button color="accent" class="sidenav-item">
+        <a routerLink="/exercises">Exercises</a>
+      </button>
+      <button mat-button color="accent" class="sidenav-item">
+        <a routerLink="/users">Users</a>
+      </button>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="root">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

@@ -1,0 +1,213 @@
+{
+  "programs": [
+    {
+      "id": 11,
+      "name": "Greek God Program"
+    },
+    {
+      "id": 12,
+      "name": "Advanced Greek God Program"
+    },
+    {
+      "id": 13,
+      "name": "Superhero Bulk"
+    },
+    {
+      "id": 14,
+      "name": "Bodyweight Mastery"
+    },
+    {
+      "name": "Goddess Toning",
+      "id": 15
+    }
+  ],
+  "routines": [
+    {
+      "id": 11,
+      "name": "Day One",
+      "description": "yes",
+      "exerciseArray": [
+        {
+          "exercise": {
+            "id": 2,
+            "name": "Incline Bench Press"
+          },
+          "sets": "5",
+          "reps": "6,5,4-6,6-8,6-8",
+          "type": "Reverse Pyramid Training",
+          "notes": "increase weight by 5 pounds per dumbbell after all max reps are hit"
+        },
+        {
+          "exercise": {
+            "id": 4,
+            "name": "Tricep Extensions"
+          },
+          "sets": "5",
+          "reps": "6,5,4-6,6-8,6-8",
+          "type": "Reverse Pyramid Training",
+          "notes": "nutty"
+        }
+      ],
+      "programId": 11
+    },
+    {
+      "id": 12,
+      "name": "Day Two",
+      "programId": 11,
+      "exerciseArray": []
+    },
+    {
+      "id": 13,
+      "name": "Phase One - Day One",
+      "programId": 12,
+      "exerciseArray": []
+    },
+    {
+      "id": 14,
+      "name": "Phase One - Day Two",
+      "programId": 12,
+      "exerciseArray": []
+    },
+    {
+      "id": 15,
+      "name": "Phase One - Day Three",
+      "programId": 12,
+      "exerciseArray": []
+    },
+    {
+      "id": 16,
+      "name": "Phase Two - Day One",
+      "programId": 12,
+      "exerciseArray": []
+    },
+    {
+      "id": 17,
+      "name": "Phase Two - Day Two",
+      "programId": 12,
+      "exerciseArray": []
+    },
+    {
+      "id": 18,
+      "name": "Phase Two - Day Three",
+      "programId": 12,
+      "exerciseArray": []
+    },
+    {
+      "name": "yes",
+      "description": "day two ",
+      "exerciseArray": [
+        {
+          "exercise": {
+            "id": 1,
+            "name": "Bench Press"
+          },
+          "sets": "5",
+          "reps": "6,5,4-6,6-8,6-8",
+          "type": "Reverse Pyramid Training",
+          "notes": "increase weight by 5 pounds per dumbbell after all max reps are hit"
+        }
+      ],
+      "programId": "12",
+      "id": 19
+    },
+    {
+      "name": "Day Two",
+      "description": "yes",
+      "exerciseArray": [
+        {
+          "exercise": {
+            "id": 1,
+            "name": "Bench Press"
+          },
+          "sets": 6,
+          "reps": "6,5,4-6,6-8",
+          "type": "Reverse Pyramid Training",
+          "notes": "take notes"
+        }
+      ],
+      "programId": "11",
+      "id": 20
+    }
+  ],
+  "exercises": [
+    {
+      "id": 1,
+      "name": "Bench Press",
+      "mainMuscle": "Chest",
+      "secondaryMuscle": "Shoulders"
+    },
+    {
+      "id": 2,
+      "name": "Incline Bench Press",
+      "mainMuscle": "Chest",
+      "secondaryMuscle": "Shoulders"
+    },
+    {
+      "id": 3,
+      "name": "Decline Bench Press",
+      "mainMuscle": "Chest",
+      "secondaryMuscle": "Shoulders"
+    },
+    {
+      "id": 4,
+      "name": "Tricep Extensions",
+      "mainMuscle": "Triceps",
+      "secondaryMuscle": "Shoulders"
+    },
+    {
+      "id": 5,
+      "name": "Dumbbell Curls",
+      "mainMuscle": "Biceps",
+      "secondaryMuscle": ""
+    },
+    {
+      "id": 6,
+      "name": "Dead Lift",
+      "mainMuscle": "Legs",
+      "secondaryMuscle": "Back"
+    },
+    {
+      "id": 7,
+      "name": "Split Squats",
+      "mainMuscle": "Legs",
+      "secondaryMuscle": "Glutes"
+    },
+    {
+      "id": 8,
+      "name": "Calf Raises",
+      "mainMuscle": "Legs",
+      "secondaryMuscle": ""
+    },
+    {
+      "id": 9,
+      "name": "Shoulder Press",
+      "mainMuscle": "Shoulders",
+      "secondaryMuscle": "Chest"
+    },
+    {
+      "id": 10,
+      "name": "Seated Row",
+      "mainMuscle": "Back",
+      "secondaryMuscle": "Shoulders"
+    },
+    {
+      "name": "Weighted Pull-up",
+      "mainMuscle": "Back",
+      "secondaryMuscle": "Shoulders",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "firstName": "James",
+      "lastName": "Kirkpatrick",
+      "email": "jkirkpatrick@chariotsolutions.com",
+      "programIds": [
+        11,
+        12,
+        13
+      ],
+      "id": 1
+    }
+  ]
+}

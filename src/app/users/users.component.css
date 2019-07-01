@@ -4,15 +4,15 @@ table {
 h1 {
   display: inline-block;
 }
-.program-header .mat-icon {
+.user-header .mat-icon {
   float: right;
   margin-left: 5px;
 }
 
-.program-header h1 {
+.user-header h1 {
   display: inline;
 }
 
-.program-header {
+.user-header {
   margin-bottom: 10px;
 }

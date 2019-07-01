@@ -1,0 +1,27 @@
+<div *ngIf="!selectedRoutine">
+  <button mat-raised-button (click)="goBack()" class="mb1"><mat-icon>arrow_back</mat-icon></button>
+</div>
+<h1 *ngIf="!selectedRoutine">Create Routine</h1>
+<h1 *ngIf="selectedRoutine">Edit Routine</h1>
+<form class="routine-form" [formGroup]="routineForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+  </div>
+  <div *ngFor="let control of routineForm.controls.exerciseArray.controls; let i = index">
+    <button class="delete-button" mat-raised-button type="button" (click)="delInput(i)">Delete</button>
+    <app-exercise-template [formattedExercises]="formattedExercises" [myForm]="routineForm.controls.exerciseArray.controls[i]"></app-exercise-template>
+  </div>
+  <div>
+    <button mat-raised-button type="button" (click)="addInput()">Add Exercise</button>
+  </div>
+  <div>
+    <button mat-raised-button type="submit" [disabled]="!routineForm.valid">Save Routine</button>
+  </div>
+</form>

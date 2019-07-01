@@ -1,0 +1,21 @@
+<div [formGroup]="myForm" class="template-form-container">
+  <mat-form-field class="full-width">
+    <input type="text" matInput placeholder="Exercise" formControlName="exercise" required [matAutocomplete]="autoGroup">
+    <mat-autocomplete #autoGroup="matAutocomplete" [displayWith]="showExerciseName">
+      <mat-optgroup *ngFor="let group of formattedExerciseOptions | async" [label]="group.mainMuscle">
+        <mat-option *ngFor="let exercise of group.exercises" [value]="exercise">
+          {{exercise.name}}
+        </mat-option>
+      </mat-optgroup>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput formControlName="sets" placeholder="Sets" type="number">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput formControlName="reps" placeholder="Reps - Comma Separated">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <textarea matInput formControlName="notes" placeholder="Notes"></textarea>
+  </mat-form-field>
+</div>

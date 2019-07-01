@@ -1,0 +1,22 @@
+<button mat-raised-button (click)="goBack()" class="mb1"><mat-icon>arrow_back</mat-icon></button>
+<h1>Create Exercise</h1>
+<form [formGroup]="exerciseForm" class="exercise-form" (ngSubmit)="save()">
+  <div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Main Muscle" formControlName="mainMuscle">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Secondary Muscle" formControlName="secondaryMuscle">
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button type="submit" [disabled]="!exerciseForm.valid">Save Exercise</button>
+  </div>
+</form>
