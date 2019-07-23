@@ -20,7 +20,7 @@ export interface ExerciseAutocompleteGroup {
 export class RoutineFormComponent implements OnInit {
   @Input() inputArray = [];
   @Input() selectedRoutine: Routine;
-  programIdentifier: number;
+  programIdentifier: string;
   routineForm: FormGroup;
   formattedExercises: ExerciseAutocompleteGroup[];
 
@@ -33,7 +33,7 @@ export class RoutineFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.programIdentifier = parseInt(this.route.snapshot.paramMap.get('programId'), 10);
+    this.programIdentifier = this.route.snapshot.paramMap.get('programId');
     this.getExercises();
 
     const newForm = this.fb.group({
@@ -104,7 +104,7 @@ export class RoutineFormComponent implements OnInit {
 
   onSubmit(): void {
     const data = {...this.routineForm.value};
-    data.programId = +this.programIdentifier;
+    data.programId = this.programIdentifier;
     if (this.selectedRoutine.name) {
       this.routineService.updateRoutine({id: +this.selectedRoutine.id, ...data} as Routine).subscribe(r => this.location.back());
     } else {

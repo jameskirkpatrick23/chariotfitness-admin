@@ -12,7 +12,7 @@ import {
   MatSortModule,
   MatTableModule,
   MatIconModule,
-  MatAutocompleteModule, MatGridListModule, MatToolbarModule, MatSidenavModule, MatSelectModule
+  MatAutocompleteModule, MatGridListModule, MatToolbarModule, MatSidenavModule, MatSelectModule, MatExpansionModule
 } from '@angular/material';
 import { ProgramsComponent } from './programs/programs.component';
 import { ProgramDetailComponent } from './program-detail/program-detail.component';
@@ -25,6 +25,9 @@ import { ExerciseFormComponent } from './exercise-form/exercise-form.component';
 import { ProgramFormComponent } from './program-form/program-form.component';
 import { UsersComponent } from './users/users.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { WorkoutLogsComponent } from './workout-logs/workout-logs.component';
+import { WorkoutFormComponent } from './workout-form/workout-form.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { UserFormComponent } from './user-form/user-form.component';
     ExerciseFormComponent,
     ProgramFormComponent,
     UsersComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserDetailComponent,
+    WorkoutLogsComponent,
+    WorkoutFormComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,8 @@ import { UserFormComponent } from './user-form/user-form.component';
     MatGridListModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

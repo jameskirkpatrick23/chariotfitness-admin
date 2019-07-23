@@ -1,35 +1,39 @@
 {
   "programs": [
     {
-      "id": 11,
+      "id": "11",
       "name": "Greek God Program"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Advanced Greek God Program"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Superhero Bulk"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Bodyweight Mastery"
     },
     {
       "name": "Goddess Toning",
-      "id": 15
+      "id": "15"
+    },
+    {
+      "name": "New Program",
+      "id": "oXeQDoK"
     }
   ],
   "routines": [
     {
-      "id": 11,
+      "id": "11",
       "name": "Day One",
       "description": "yes",
       "exerciseArray": [
         {
           "exercise": {
-            "id": 2,
+            "id": "2",
             "name": "Incline Bench Press"
           },
           "sets": "5",
@@ -39,7 +43,7 @@
         },
         {
           "exercise": {
-            "id": 4,
+            "id": "4",
             "name": "Tricep Extensions"
           },
           "sets": "5",
@@ -51,43 +55,43 @@
       "programId": 11
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Day Two",
       "programId": 11,
       "exerciseArray": []
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Phase One - Day One",
       "programId": 12,
       "exerciseArray": []
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Phase One - Day Two",
       "programId": 12,
       "exerciseArray": []
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Phase One - Day Three",
       "programId": 12,
       "exerciseArray": []
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Phase Two - Day One",
       "programId": 12,
       "exerciseArray": []
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Phase Two - Day Two",
       "programId": 12,
       "exerciseArray": []
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Phase Two - Day Three",
       "programId": 12,
       "exerciseArray": []
@@ -98,7 +102,7 @@
       "exerciseArray": [
         {
           "exercise": {
-            "id": 1,
+            "id": "1",
             "name": "Bench Press"
           },
           "sets": "5",
@@ -108,84 +112,94 @@
         }
       ],
       "programId": "12",
-      "id": 19
+      "id": "19"
     },
     {
+      "id": "20",
       "name": "Day Two",
       "description": "yes",
       "exerciseArray": [
         {
           "exercise": {
-            "id": 1,
+            "id": "1",
             "name": "Bench Press"
           },
           "sets": 6,
           "reps": "6,5,4-6,6-8",
           "type": "Reverse Pyramid Training",
           "notes": "take notes"
+        },
+        {
+          "exercise": {
+            "id": "2",
+            "name": "Incline Bench Press"
+          },
+          "sets": "5",
+          "reps": "10, 10, 10",
+          "type": "Reverse Pyramid Training",
+          "notes": ""
         }
       ],
-      "programId": "11",
-      "id": 20
+      "programId": "11"
     }
   ],
   "exercises": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Bench Press",
       "mainMuscle": "Chest",
       "secondaryMuscle": "Shoulders"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Incline Bench Press",
       "mainMuscle": "Chest",
       "secondaryMuscle": "Shoulders"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Decline Bench Press",
       "mainMuscle": "Chest",
       "secondaryMuscle": "Shoulders"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Tricep Extensions",
       "mainMuscle": "Triceps",
       "secondaryMuscle": "Shoulders"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Dumbbell Curls",
       "mainMuscle": "Biceps",
       "secondaryMuscle": ""
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Dead Lift",
       "mainMuscle": "Legs",
       "secondaryMuscle": "Back"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Split Squats",
       "mainMuscle": "Legs",
       "secondaryMuscle": "Glutes"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Calf Raises",
       "mainMuscle": "Legs",
       "secondaryMuscle": ""
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Shoulder Press",
       "mainMuscle": "Shoulders",
       "secondaryMuscle": "Chest"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Seated Row",
       "mainMuscle": "Back",
       "secondaryMuscle": "Shoulders"
@@ -194,7 +208,7 @@
       "name": "Weighted Pull-up",
       "mainMuscle": "Back",
       "secondaryMuscle": "Shoulders",
-      "id": 11
+      "id": "11"
     }
   ],
   "users": [
@@ -203,11 +217,74 @@
       "lastName": "Kirkpatrick",
       "email": "jkirkpatrick@chariotsolutions.com",
       "programIds": [
-        11,
-        12,
-        13
+        "11",
+        "12",
+        "13"
       ],
-      "id": 1
+      "id": "1"
+    }
+  ],
+  "workouts": [
+    {
+      "completedAt": "2019-07-03T15:10:19.223Z",
+      "exerciseResults": [
+        {
+          "exercise": {
+            "id": "1",
+            "name": "Bench Press"
+          },
+          "sets": 6,
+          "reps": "6,5,4-6,6-8",
+          "weights": "5,10,15,20,25",
+          "type": "Reverse Pyramid Training"
+        },
+        {
+          "exercise": {
+            "id": "2",
+            "name": "Incline Bench Press"
+          },
+          "reps": "10, 10, 10",
+          "sets": "5",
+          "type": "Reverse Pyramid Training",
+          "weights": "10,10,10"
+        }
+      ],
+      "notes": "",
+      "programId": "11",
+      "routineId": "20",
+      "startedAt": "2019-07-03T15:09:51.338Z",
+      "userId": "1"
+    },
+    {
+      "notes": "",
+      "startedAt": "2019-07-03T15:15:27.837Z",
+      "exerciseResults": [
+        {
+          "exercise": {
+            "id": "1",
+            "name": "Bench Press"
+          },
+          "sets": 6,
+          "reps": "6,5,4-6,6-8",
+          "weights": "10, 100, 200, 300",
+          "type": "Reverse Pyramid Training"
+        },
+        {
+          "exercise": {
+            "id": "2",
+            "name": "Incline Bench Press"
+          },
+          "sets": "5",
+          "reps": "10, 10, 10",
+          "weights": "50, 100, 150, 200",
+          "type": "Reverse Pyramid Training"
+        }
+      ],
+      "programId": "11",
+      "userId": "1",
+      "routineId": "20",
+      "completedAt": "2019-07-03T15:15:42.152Z",
+      "id": "nqCtD0c"
     }
   ]
 }

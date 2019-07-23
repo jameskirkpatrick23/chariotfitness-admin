@@ -1,0 +1,42 @@
+<button mat-raised-button (click)="goBack()" class="mb1"><mat-icon>arrow_back</mat-icon></button>
+<div *ngIf="selectedUser" class="user-details">
+  <h2>{{selectedUser.firstName}} {{selectedUser.lastName}}</h2>
+  <h3>{{selectedUser.email}}</h3>
+  <h3>Available Programs</h3>
+  <div *ngFor="let userProgram of userPrograms" class="mb1">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{userProgram.program.name}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-accordion *ngFor="let routine of userProgram.routines">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{routine.name}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{routine.description}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <button mat-flat-button class="float-right" routerLink="/users/{{selectedUser.id}}/programs/{{userProgram.program.id}}/routines/{{routine.id}}/workouts">
+              <mat-icon>blur_linear</mat-icon> View Logs
+            </button>
+            <button mat-flat-button class="float-right" routerLink="/users/{{selectedUser.id}}/programs/{{userProgram.program.id}}/routines/{{routine.id}}/workouts/new">
+              <mat-icon>add_circle_outline</mat-icon> Log Workout
+            </button>
+            <div *ngFor="let template of routine.exerciseArray">
+              <h3>Exercise: {{template.exercise.name}}</h3>
+              <p>Reps: {{template.reps}}</p>
+              <p>Sets: {{template.sets}}</p>
+              <p>Type: {{template.type}}</p>
+              <p>Notes: {{template.notes}}</p>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

@@ -10,6 +10,9 @@ import {ExerciseFormComponent} from './exercise-form/exercise-form.component';
 import {ProgramFormComponent} from './program-form/program-form.component';
 import {UsersComponent} from './users/users.component';
 import {UserFormComponent} from './user-form/user-form.component';
+import {UserDetailComponent} from './user-detail/user-detail.component';
+import {WorkoutLogsComponent} from './workout-logs/workout-logs.component';
+import {WorkoutFormComponent} from './workout-form/workout-form.component';
 
 const routes: Routes = [
   { path: '', component: ProgramsComponent },
@@ -18,6 +21,9 @@ const routes: Routes = [
   { path: 'programs/:id', component: ProgramDetailComponent },
   { path: 'users', component: UsersComponent },
   { path: 'users/new', component: UserFormComponent },
+  { path: 'users/:id', component: UserDetailComponent },
+  { path: 'users/:userId/programs/:programId/routines/:routineId/workouts', component: WorkoutLogsComponent },
+  { path: 'users/:userId/programs/:programId/routines/:routineId/workouts/new', component: WorkoutFormComponent },
   { path: 'exercises', component: ExercisesComponent },
   { path: 'exercises/new', component: ExerciseFormComponent },
   { path: 'exercises/:id', component: ExerciseDetailComponent },

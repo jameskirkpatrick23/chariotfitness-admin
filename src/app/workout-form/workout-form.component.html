@@ -1,0 +1,25 @@
+<button mat-raised-button (click)="goBack()" class="mb1"><mat-icon>arrow_back</mat-icon></button>
+<div *ngIf="workoutForm && workoutForm.controls">
+  <form class="routine-form" [formGroup]="workoutForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let control of workoutForm.controls.exerciseResults.controls; let i = index">
+      <div [formGroup]="workoutForm.controls.exerciseResults.controls[i]">
+        <p>{{currentRoutine.exerciseArray[i].exercise.name}}</p>
+        <div>
+          <mat-form-field class="full-width">
+            <input matInput formControlName="reps" placeholder="Reps - Comma Separated">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="full-width">
+            <input matInput formControlName="weights" placeholder="Weights - Comma Separated">
+          </mat-form-field>
+        </div>
+      </div>
+  <!--    <button class="delete-button" mat-raised-button type="button" (click)="delInput(i)">Delete</button>-->
+  <!--    <app-exercise-template [formattedExercises]="formattedExercises" [myForm]="routineForm.controls.exerciseArray.controls[i]"></app-exercise-template>-->
+    </div>
+    <div>
+      <button mat-raised-button type="submit" [disabled]="!workoutForm.valid">Save Workout</button>
+    </div>
+  </form>
+</div>

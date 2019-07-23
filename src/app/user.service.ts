@@ -57,13 +57,12 @@ export class UserService {
 
   getUser(id): Observable<User> {
     return this.http.get<User>(
-      `http://localhost:3000/users/${id}`,
+      `http://localhost:3000/users/${id}?_embed=workouts`,
       this.httpOptions
     ).pipe(
       catchError(this.handleError<User>('getUser'))
     );
   }
-
 
   createUser(user: User): Observable<User> {
     return this.http.post<User>(

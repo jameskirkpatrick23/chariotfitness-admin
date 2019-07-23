@@ -62,7 +62,7 @@ export class ProgramDetailComponent implements OnInit {
   }
 
   getProgram(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.programService.getProgram(id)
       .subscribe(program => this.selectedProgram = program);
   }

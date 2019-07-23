@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {MessageService} from './message.service';
 import {Observable, of} from 'rxjs';
-import {Routine} from './models';
+import {Workout} from './models';
 import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RoutineService {
+export class WorkoutService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
@@ -32,47 +32,47 @@ export class RoutineService {
   }
 
   private log(message: string) {
-    this.messageService.add(`Routine Service: ${message}`);
+    this.messageService.add(`Workout Service: ${message}`);
   }
 
-  getRoutines(): Observable<Routine[]> {
-    return this.http.get<Routine[]>(
-      'http://localhost:3000/routines',
+  getWorkouts(): Observable<Workout[]> {
+    return this.http.get<Workout[]>(
+      'http://localhost:3000/workouts',
       this.httpOptions
     ).pipe(
-      catchError(this.handleError<Routine[]>('getRoutines', []))
+      catchError(this.handleError<Workout[]>('getWorkouts', []))
     );
   }
 
-  updateRoutine(routine: Routine): Observable<Routine> {
-    this.messageService.add('Routine Service: updating single routine');
+  updateWorkout(workout: Workout): Observable<Workout> {
+    this.messageService.add('Workout Service: updating single workout');
     return this.http.put(
-      `http://localhost:3000/routines/${routine.id}`,
-      routine,
+      `http://localhost:3000/workouts/${workout.id}`,
+      workout,
       this.httpOptions
     ).pipe(
-        catchError(this.handleError<any>(`updateRoutine`))
-      );
+      catchError(this.handleError<any>(`updateWorkout`))
+    );
   }
 
-  getRoutine(id): Observable<Routine> {
-    return this.http.get<Routine>(
-      `http://localhost:3000/routines/${id}`,
+  getWorkout(id): Observable<Workout> {
+    return this.http.get<Workout>(
+      `http://localhost:3000/workouts/${id}`,
       this.httpOptions
     ).pipe(
-      catchError(this.handleError<Routine>('getRoutine'))
+      catchError(this.handleError<Workout>('getWorkout'))
     );
   }
 
 
-  createRoutine(routine: Routine): Observable<Routine> {
-    return this.http.post<Routine>(
-      `http://localhost:3000/programs/${routine.programId}/routines`,
-      routine,
+  createWorkout(workout: Workout): Observable<Workout> {
+    return this.http.post<Workout>(
+      `http://localhost:3000/users/${workout.userId}/workouts`,
+      workout,
       this.httpOptions
     ).pipe(
 
-      catchError(this.handleError<Routine>('createRoutine'))
+      catchError(this.handleError<Workout>('createWorkout'))
     );
   }
 

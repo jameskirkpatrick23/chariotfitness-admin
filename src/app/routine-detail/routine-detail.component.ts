@@ -38,7 +38,7 @@ export class RoutineDetailComponent implements OnInit {
   }
 
   getRoutine(): void {
-    const id = +this.route.snapshot.paramMap.get('routineId');
+    const id = this.route.snapshot.paramMap.get('routineId');
     this.routineService.getRoutine(id)
       .subscribe(routine => this.selectedRoutine = routine);
   }

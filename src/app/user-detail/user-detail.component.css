@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+.mat-icon {
+  cursor: pointer;
+}
+.full-width {
+  width: 50%;
+  margin-right: 10px;
+}
+.mb1 {
+  margin-bottom: 5px;
+}
+.user-header .mat-icon {
+  float: right;
+  margin-left: 5px;
+}
+
+.user-header h1 {
+  display: inline;
+}
+
+.user-header {
+  margin-bottom: 10px;
+}
+
+.float-right {
+  float: right;
+}

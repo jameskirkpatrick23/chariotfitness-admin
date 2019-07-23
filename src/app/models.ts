@@ -1,29 +1,46 @@
 export interface Program {
-  id: number;
+  id: string;
   name: string;
   active: boolean;
   routines: [];
 }
 
 export interface Routine {
-  id: number;
+  id: string;
   name: string;
   description: string;
-  programId: number;
+  programId: string;
   exerciseArray: any[];
 }
 
 export interface Exercise {
-  id: number;
+  id: string;
   name: string;
   mainMuscle: string;
   secondaryMuscle: string;
 }
+
 export interface User {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
   confirmationToken: string;
-  programIds: number[];
+  programIds: string[];
+}
+
+export interface Workout {
+  id: string;
+  notes: string;
+  completedAt: typeof Date;
+  startedAt: typeof Date;
+  routineId: number;
+  userId: string;
+  exerciseResults: [
+    {
+      exerciseId: string,
+      sets: number,
+      reps: number
+    }
+  ];
 }
